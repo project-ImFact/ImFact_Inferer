@@ -1,0 +1,4 @@
+kobert @ git+https://github.com/SKTBrain/KoBERT.git@fcd729f2f4b37858f333597c0782388ada51eb5f
+kobert-tokenizer @ git+https://github.com/SKTBrain/KoBERT.git@fcd729f2f4b37858f333597c0782388ada51eb5f#subdirectory=kobert_hf
+numpy==1.23.5
+boto3==1.37.38
