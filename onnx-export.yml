@@ -1,0 +1,12 @@
+name: onnx-export_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - boto3
+  - pip:
+    - torch==2.3.0
+    - torchvision==0.18.0
+    - transformers==4.38.0
+    - onnx==1.15.0
+    - kobert @ git+https://github.com/SKTBrain/KoBERT.git@fcd729f2f4b37858f333597c0782388ada51eb5f

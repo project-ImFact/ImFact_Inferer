@@ -1,5 +1,7 @@
+.git
+.gitignore
+
 __pycache__/
-.cache/
 
 onnx_models/
 *.onnx
