@@ -2,7 +2,7 @@ import json
 import io
 import asyncio
 import logging
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 import boto3
 from tqdm import tqdm
 
@@ -58,7 +58,8 @@ async def run_batch(
     results = []
 
     loop = asyncio.get_event_loop()
-    with ProcessPoolExecutor(max_workers=max_workers) as executor:
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = [loop.run_in_executor(executor, process_single_article, art) for art in articles]
 
         for f in tqdm(asyncio.as_completed(futures), total=len(futures), desc="Fast Batch Inference"):
@@ -92,7 +93,7 @@ if __name__ == "__main__":
             input_bucket="imfact-news",
             input_key="summarized/news_summarized.jsonl",
             output_bucket="imfact-news",
-            output_key="inference/news_inference_inference.jsonl",
+            output_key="inference/news_inference.jsonl",
             max_workers=4,
         )
     )
