@@ -5,6 +5,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor
 import boto3
 from tqdm import tqdm
+from typing import Any, Dict
 
 from imfact_infer import ImFactInferer
 
@@ -29,7 +30,7 @@ def init_inferer():
     return _inferer
 
 
-def process_single_article(article: dict):
+def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
     inferer = init_inferer()
     result = inferer.compute_news_reliability(article["title"], article["body"])
     article["reliability_score"] = result["final_score"]
