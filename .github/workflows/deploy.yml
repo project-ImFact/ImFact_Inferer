@@ -7,7 +7,7 @@ on:
 env:
   AWS_REGION: ap-northeast-2
   ECR_REPOSITORY: imfact-inferer
-  IMAGE_TAG: latest
+  IMAGE_TAG: dev
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
 jobs:
