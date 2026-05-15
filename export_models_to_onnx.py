@@ -95,9 +95,9 @@ def export_title_onnx(pt_path: str, onnx_path: str):
 
     model.eval()
 
-    dummy_input_ids = torch.zeros((1, 128), dtype=torch.long)
-    dummy_attention = torch.ones((1, 128), dtype=torch.long)
-    dummy_token_type = torch.zeros((1, 128), dtype=torch.long)
+    dummy_input_ids = torch.zeros((1, 512), dtype=torch.long)
+    dummy_attention = torch.ones((1, 512), dtype=torch.long)
+    dummy_token_type = torch.zeros((1, 512), dtype=torch.long)
 
     torch.onnx.export(
         model,
